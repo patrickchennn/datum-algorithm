@@ -1,0 +1,28 @@
+    what is dynamic progamming?
+Dynamic Programming is an algorithmic paradigm that solves a given complex problem by breaking it into subproblems and stores the results of subproblems to avoid computing the same results again.
+
+the key is: 
+complex problem 
+--> break it into subproblems
+--> stores the results of subproblems
+
+why we need to stores the results of subproblems?
+because, we want to avoid computing the same results again.
+
+    memoization recipe:
+1. Make it work.
+-make it work first, it could be slow but that's okay, because we are looking for correctness in out solution even though it slow/TLE
+-visualize the problem as a tree
+-implement the tree using recursion
+-test it
+
+2. if it works then make it efficient.
+-add a memo object/dict/hashmap
+-add a base case to return memo values
+-store return values into the memo
+
+note:
+1. Don't solve it quickly all in one go, it should be a separate process(make it work first then optimize it)
+
+    recursion tip:
+try to think about your recursive functions in terms of tree. I.E. try to VISUALIZE it
