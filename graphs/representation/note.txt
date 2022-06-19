@@ -1,0 +1,22 @@
+resources
+
+https://www.mathopenref.com/vertex.html (why vertex? what is vertex?)
+
+https://stackoverflow.com/questions/28712364/difference-between-vector-int-v-and-vector-vectorint-v
+
+https://www.geeksforgeeks.org/graph-and-its-representations/
+
+https://www.geeksforgeeks.org/mathematics-graph-theory-basics-set-1/
+
+https://www.tutorialspoint.com/graph_theory/graph_theory_fundamentals.htm
+
+https://www.programiz.com/dsa/graph
+
+https://www.geeksforgeeks.org/graph-implementation-using-stl-for-competitive-programming-set-1-dfs-of-unweighted-and-undirected/
+
+
+https://www.youtube.com/watch?v=Cjk_VSNKJxE&list=PLeIMaH7i8JDiRA4fK9QmjvDSZKBJDyxpc&index=4
+Adjecency List representation of graph (Code)
+
+https://www.baeldung.com/cs/graphs
+
