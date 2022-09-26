@@ -33,8 +33,8 @@ def merge_two_sorted_lists(a: List, b: List) -> List:
             k+=1
             j+=1
     
-    print(f"i < len(a) --> {i} < {m}")
-    print(f"j < len(b) --> {j} < {n}\n")
+    print(f"i < len(a) --> {i} < {m} = {i<m}")
+    print(f"j < len(b) --> {j} < {n} = {j<n}\n")
 
     # if either array a or b has remaining element, copy all of the element into sorted_list
     while(i<m):
@@ -44,7 +44,7 @@ def merge_two_sorted_lists(a: List, b: List) -> List:
         i+=1
 
     while(j<n):
-        sorted_list[k] = [j]
+        sorted_list[k] = b[j]
 
         k+=1
         j+=1
@@ -52,7 +52,8 @@ def merge_two_sorted_lists(a: List, b: List) -> List:
     return sorted_list
 
 def main():
-    a=[5,8,12] # 4
+    # both list are sorted
+    a=[5,8,12,33] # 4
     b=[7,9,45,51] # 4
     # print(merge_two_sorted_lists(a,b))
 
