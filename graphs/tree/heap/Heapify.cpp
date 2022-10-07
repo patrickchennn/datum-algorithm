@@ -9,8 +9,8 @@ int getParentIndex(int i);
 int getLeftChildIndex(int i);
 int getRightChildIndex(int i);
 
-// TC: O(n)
-void heapify(vector<int> &arr,int parentIdx){
+
+void actualHeapify(vector<int> &arr, int parentIdx){
     printf("curr ele = %d\n",arr[parentIdx]);
     int largest = parentIdx;
     int leftChildIdx = getLeftChildIndex(parentIdx);
@@ -23,19 +23,28 @@ void heapify(vector<int> &arr,int parentIdx){
     }
     if(largest != parentIdx){
         std::swap(arr[largest],arr[parentIdx]);
+        cout << "after swap: ";
         print(arr);
-        heapify(arr,largest);
+        cout << "\n";
+        actualHeapify(arr,largest);
+    }
+}
+
+// TC: O(n)
+void heapify(vector<int> &arr){
+    for(int i=arr.size()-1; i>=0; i--){
+        actualHeapify(arr,i);
+        print(arr);
     }
 }
 
 int main(){
-    // arr.size() = 7
-    vector<int> arr {10,20,15,12,40,25,18};
+    // initial array
+    // vector<int> arr {10,20,15,12,40,25,18}; // arr.size() = 7
+    vector<int> arr {10,20,15,30,40}; // arr.size() = 5
 
-    // TC: O(n)
-    for(int i=arr.size()-1; i>=0; i--){
-        heapify(arr,i);
-    }
+    heapify(arr);
+    
     cout << "heapified: ";
     print(arr);
     return 0;
