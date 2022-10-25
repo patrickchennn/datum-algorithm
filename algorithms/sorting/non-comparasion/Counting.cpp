@@ -33,25 +33,25 @@ void countSort(vector<int> &arr,int n){
     1 0 3 1 3 1
 
     we need:
-    1.keep the value of idx 0 --> count[0] = 1
+    1.keep the value of idx 0 as our staring value --> count[0] = 1
     2.start from idx 1
 
-    sum idx 0 with current index(1) will results x --> count[0]+count[1] = 4
-    x+current(2)=x1 --> 4+count[2] = 4
-    x1+current(3)=x2 --> 4+count[3] = 6
+    get the sum of index 0..n-1 and 1..n values
+    interval: [0,n) [1,n]
+    count[0]+count[1]=x --> x=1+3 --> x=4
+    x+count[2]=x1 --> 4+0=x1 --> x1=4
+    x1+count[3]=x2 --> 4+2=x1 --> x2=6
     so on, and so forth ...
     */
-    puts("");
-    for(int i=1; i<range; i++) // T(r) = r
+    for(int i=1; i<=range; i++) // T(r) = r
         count[i] += count[i-1];
 
+    puts("the actual position: ");
     printArray(count);
 
     for(int i=n-1; i >= 0; i--){ // T(n) = n
-        //int sortedIndex = count[arr[i]] - 1;
-        int sortedIndex = (count[arr[i]])--;
+        int sortedIndex = (count[arr[i]]) --;
         sortedArray[sortedIndex] = arr[i];
-        (count[arr[i]])--;
     }
     printArray(sortedArray);
 
@@ -63,16 +63,21 @@ void countSort(vector<int> &arr,int n){
 }
 
 int main(){
-    int n;
-    cin >> n;
-    vector<int> arr(n);
-    for(int i=0; i<n; i++) cin >> arr[i];
-    cout << endl;
+    // int n;
+    // cin >> n;
+    // vector<int> arr(n);
+    // for(int i=0; i<n; i++) cin >> arr[i];
+    // cout << endl;
+    
+    vector<int> arr{2, 1, 1, 0, 2 ,5,4 ,0 ,2 ,8 ,7 ,7 ,9, 2,0,1,9};
+    int n = arr.size();
 
     /* 
     there is a constrains for countSort(), and that is 0 <= arr[i] <= r, where r is the len of count array
     */
     countSort(arr,n);
+    cout << "sorted array: ";
+    printArray(arr);
 	return 0;
 }
 
